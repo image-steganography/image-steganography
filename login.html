@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	</head>
+	<body style="background-color: beige" background="i.png">
+		<div class="w3-container">
+			<div
+				class="w3-padding w3-card-4 w3-white"
+				style="margin-top: 10%; margin-left: 35%; margin-right: 35%"
+			>
+				<br />
+
+				<h3 class="w3-center"><b>Login</b></h3>
+				<hr />
+				<br />
+				<label class=""><b>Email</b></label>
+				<input type="text" class="w3-input w3-border" placeholder="" />
+				<br />
+
+				<label class=""><b>Password</b></label>
+				<input type="password" class="w3-input w3-border" placeholder="" />
+				<br />
+				<button type="submit" class="w3-button w3-block w3-black" onclick="login()">login
+				</button>
+				<p class="w3-center">
+					Don't have an account? <a href="./signup.html">signup</a>
+				</p>
+
+				<script>
+					function login() {
+						//login code here
+
+						window.location = "./app.html";
+					}
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

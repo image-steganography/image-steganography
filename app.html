@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image steganography</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	</head>
+	<body style=" background-size: cover"  background="i.png">
+		<div
+			class="w3-container w3-card-4 w3-padding-16 w3-white w3-border w3-border-blue"
+			style="margin-top: 10%; margin-right: 35%; margin-left: 35%"
+		>
+			<br />
+			<div class="w3-center">
+				<h3><b>Image steganography</b></h3>
+			</div>
+
+			<hr />
+			<div class="w3-row">
+				<a href="javascript:void(0)" onclick="openTab(event, 'Encode');">
+					<div
+						class="w3-col s6 tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red"
+					>
+						Encode
+					</div>
+				</a>
+				<a href="javascript:void(0)" onclick="openTab(event, 'Decode');">
+					<div
+						class="w3-col s6 tablink w3-bottombar w3-hover-light-grey w3-padding"
+					>
+						Decode
+					</div>
+				</a>
+			</div>
+			<form  method="post" action="./image-steganography.php" enctype="multipart/form-data">
+			<div id="Encode" class="w3-container city">
+				
+				<input type="submit" value="Encode" class="w3-button w3-right w3-border w3-border-red" >
+				
+			</div>
+			</form>
+			<form  method="post" action="./steganographic-decoder.php"  enctype="multipart/form-data">
+			<div id="Decode" class="w3-container city" style="display: none">
+							<input type="submit" value="decode" name="f3" class="w3-button w3-right w3-border w3-border-red">
+				
+			</div></form>
+		</div>
+		<center>
+<video width="600" height="400" controls><source src="encode.mp4" type="video/mp4"></video></center>
+<center>
+<video width="600" height="400" controls><source src="decode.mp4" type="video/mp4"></video></center>
+		<script>
+			function openTab(evt, TabName) {
+				var i, x, tablinks;
+				x = document.getElementsByClassName("city");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablink");
+				for (i = 0; i < x.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(
+						" w3-border-red",
+						""
+					);
+				}
+				document.getElementById(TabName).style.display = "block";
+				evt.currentTarget.firstElementChild.className += " w3-border-red";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign up</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	</head>
+	<body style="background-color: beige" background="i.png">
+		<div class="w3-container">
+			<div
+				class="w3-padding w3-card-4 w3-white"
+				style="margin-top: 10%; margin-left: 35%; margin-right: 35%"
+			>
+				<br />
+
+				<h3 class="w3-center"><b>Sign up</b></h3>
+				<hr />
+				<br />
+				<label class=""><b>Email</b></label>
+				<input type="text" class="w3-input w3-border" placeholder="" />
+				<br />
+
+				<label class=""><b>Password</b></label>
+				<input
+					id="pass1"
+					type="password"
+					class="w3-input w3-border"
+					placeholder=""
+				/>
+				<br />
+
+				<label class=""><b>Confirm Password</b></label>
+				<input
+					id="pass2"
+					type="password"
+					class="w3-input w3-border"
+					placeholder=""
+				/>
+				<br />
+				<div id="errMessage"></div>
+
+				<button class="w3-button w3-block w3-black" onclick="signup()">
+					Sign up
+				</button>
+
+				<p class="w3-center">
+					Already have an account? <a href="./login.html">login</a>
+				</p>
+
+				<script>
+					function signup() {
+						let pass1 = document.getElementById("pass1").value;
+						let pass2 = document.getElementById("pass2").value;
+
+						var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+						if (pass1.match(decimal)) {
+							if (pass1 === pass2) {
+								document.getElementById("errMessage").innerHTML = "";
+								//password validation successful
+								//add sign up logic here
+								window.location = "./login.html";
+							} else {
+								document.getElementById(
+									"errMessage"
+								).innerHTML = `<p  class="w3-text-red">Passwords do not match</p><br />`;
+							}
+						} else {
+							document.getElementById(
+								"errMessage"
+							).innerHTML = `	<p  class="w3-text-red">
+				Password mush have 8 to 15 characters which contain at least one
+					lowercase letter, one uppercase letter, one numeric digit, and one
+					special character </p><br />`;
+
+							return false;
+						}
+					}
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
